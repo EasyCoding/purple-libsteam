@@ -68,7 +68,7 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
 * Tue Jun 21 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-12.20160618git0f51fd6
-- Updated to latest Git snapshot. Added missing LDFLAGS to %build.
+- Updated to latest Git snapshot. Added missing LDFLAGS to build.
 
 * Sun Jun 19 2016 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-11.20160618gitcd5a294
 - Updated to latest Git snapshot.
