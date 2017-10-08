@@ -25,7 +25,7 @@ BuildRequires: gcc
 %package -n pidgin-%{plugin_name}
 Summary: Adds pixmaps, icons and smileys for Steam protocol
 BuildArch: noarch
-Requires: %{name} = %{version}-%{release}
+Requires: %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires: pidgin
 
 %description
@@ -39,7 +39,7 @@ Adds pixmaps, icons and smileys for Steam protocol implemented by steam-mobile.
 %setup -qn pidgin-opensteamworks-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
-perl -i -pe 's/\r\n/\n/gs' README.md
+sed -i -e "s,\r,," README.md
 
 %build
 cd %{dir_name}
