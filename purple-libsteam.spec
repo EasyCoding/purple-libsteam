@@ -7,7 +7,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 17.%{date}git%{shortcommit0}%{?dist}
+Release: 18.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -44,7 +44,7 @@ sed -i -e "s,\r,," README.md
 %build
 cd %{dir_name}
 export CFLAGS="%{optflags}"
-export LDFLAGS="%{__global_ldflags}"
+export LDFLAGS="%{__global_ldflags} -lz"
 %make_build
 
 %install
@@ -61,6 +61,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
+* Tue Jan 23 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-18.20170929gitab6d446
+- Fixed build under Fedora Rawhide.
+
 * Sun Oct 08 2017 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-17.20170929gitab6d446
 - Minor SPEC changes. Fixed build under Rawhide.
 
