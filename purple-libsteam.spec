@@ -7,7 +7,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 20.%{date}git%{shortcommit0}%{?dist}
+Release: 21.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -61,8 +61,11 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
-* Fri May 25 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-20.20180514git4a09c08
+* Fri May 25 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-21.20180514git4a09c08
 - Updated to latest snapshot.
+
+* Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.1-20.20171225git7f761df
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
 * Wed Jan 24 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-19.20171225git7f761df
 - Updated to latest snapshot.
