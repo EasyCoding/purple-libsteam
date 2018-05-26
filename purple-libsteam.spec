@@ -42,14 +42,12 @@ Adds pixmaps, icons and smileys for Steam protocol implemented by steam-mobile.
 sed -i -e "s,\r,," README.md
 
 %build
-cd %{dir_name}
 export CFLAGS="%{optflags}"
 export LDFLAGS="%{__global_ldflags} -lz"
-%make_build
+%make_build -C %{dir_name}
 
 %install
-cd %{dir_name}
-%make_install
+%make_install -C %{dir_name}
 chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 
 %files
