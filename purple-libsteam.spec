@@ -36,7 +36,7 @@ based messengers.
 Adds pixmaps, icons and smileys for Steam protocol implemented by steam-mobile.
 
 %prep
-%setup -qn pidgin-opensteamworks-%{commit0}
+%autosetup -n pidgin-opensteamworks-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
 sed -i -e "s,\r,," README.md
