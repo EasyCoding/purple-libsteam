@@ -7,7 +7,7 @@
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 21.%{date}git%{shortcommit0}%{?dist}
+Release: 22.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -36,17 +36,20 @@ based messengers.
 Adds pixmaps, icons and smileys for Steam protocol implemented by steam-mobile.
 
 %prep
-%autosetup -n pidgin-opensteamworks-%{commit0}
+%setup -qn pidgin-opensteamworks-%{commit0}
 
 # fix W: wrong-file-end-of-line-encoding
 sed -i -e "s,\r,," README.md
 
 %build
-%set_build_flags
-%make_build -C %{dir_name}
+cd %{dir_name}
+export CFLAGS="%{optflags}"
+export LDFLAGS="%{__global_ldflags} -lz"
+%make_build
 
 %install
-%make_install -C %{dir_name}
+cd %{dir_name}
+%make_install
 chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 
 %files
@@ -58,6 +61,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
+* Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.1-22.20180514git4a09c08
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Fri May 25 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-21.20180514git4a09c08
 - Updated to latest snapshot.
 
