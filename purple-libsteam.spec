@@ -1,13 +1,13 @@
 %global plugin_name libsteam
 %global dir_name steam-mobile
 
-%global commit0 b16a636d177f4a8862abdfbdb2c0994712ea0cd3
+%global commit0 feece3ce45e769660e36f9cd347f54003c95babf
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global date 20180801
+%global date 20190117
 
 Name: purple-%{plugin_name}
 Version: 1.6.1
-Release: 24.%{date}git%{shortcommit0}%{?dist}
+Release: 25.%{date}git%{shortcommit0}%{?dist}
 Summary: Steam plugin for Pidgin/Adium/libpurple
 
 License: GPLv3
@@ -58,6 +58,9 @@ chmod 755 %{buildroot}%{_libdir}/purple-2/%{plugin_name}.so
 %{_datadir}/pixmaps/pidgin/protocols/*/steam.png
 
 %changelog
+* Wed May 22 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 1.6.1-25.20190117gitfeece3c
+- Updated to latest snapshot.
+
 * Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.1-24.20180801gitb16a636
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
