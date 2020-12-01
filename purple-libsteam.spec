@@ -16,9 +16,10 @@ BuildRequires: pkgconfig(purple)
 BuildRequires: pkgconfig(json-glib-1.0)
 BuildRequires: pkgconfig(zlib)
 BuildRequires: pkgconfig(nss)
+BuildRequires: pkgconfig(libsecret-1)
 
-BuildRequires: libsecret-devel
 BuildRequires: gcc
+BuildRequires: make
 
 %package -n pidgin-%{plugin_name}
 Summary: Adds pixmaps, icons and smileys for Steam protocol
